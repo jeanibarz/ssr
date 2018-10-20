@@ -501,7 +501,7 @@ class NfcHoaRenderer::FftProcessor : public ProcessItem<FftProcessor>
   public:
     FftProcessor(size_t block_size, sample_type* first)
       : _fft_plan(apf::fftw<sample_type>::plan_r2r_1d, block_size, first, first
-            , FFTW_R2HC, FFTW_PATIENT)
+            , FFTW_HC2R, FFTW_PATIENT)
     {}
 
     APF_PROCESS(FftProcessor, ProcessItem<FftProcessor>)
